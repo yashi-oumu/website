@@ -1,0 +1,203 @@
+:root {
+  --font-sans: "JetBrains Mono", "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+  --font-display: "Space Grotesk", "JetBrains Mono", system-ui, sans-serif;
+  --logo-size: clamp(10rem, 34vmin, 18rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--yashi-space-8);
+  padding: var(--yashi-space-16) var(--yashi-space-6);
+  font-family: var(--font-sans);
+  font-size: var(--yashi-text-base);
+  line-height: var(--yashi-leading-base);
+  color: var(--yashi-color-foreground);
+  background-color: var(--yashi-color-background);
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: var(--yashi-z-hide);
+  pointer-events: none;
+  background:
+    radial-gradient(60vmax 60vmax at 50% 0%, color-mix(in oklab, var(--yashi-color-accent) 16%, transparent), transparent 70%),
+    radial-gradient(40vmax 40vmax at 50% 100%, color-mix(in oklab, var(--yashi-color-blue) 12%, transparent), transparent 70%);
+}
+
+::selection {
+  background-color: var(--yashi-color-selection);
+}
+
+a {
+  color: var(--yashi-color-accent);
+  text-decoration: none;
+  transition: color var(--yashi-transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--yashi-color-background), 0 0 0 4px var(--yashi-color-accent);
+  border-radius: var(--yashi-radius-sm);
+}
+
+.hero {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--yashi-space-6);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.logo {
+  width: var(--logo-size);
+  height: auto;
+  border-radius: var(--yashi-radius-2xl);
+  box-shadow: var(--yashi-shadow-brand);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--yashi-space-2);
+  padding: var(--yashi-space-1) var(--yashi-space-4);
+  font-family: var(--font-mono);
+  font-size: var(--yashi-text-xs);
+  font-weight: var(--yashi-font-lg);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--yashi-color-accent);
+  background-color: color-mix(in oklab, var(--yashi-color-accent) 15%, transparent);
+  border: 1px solid var(--yashi-color-accent);
+  border-radius: var(--yashi-radius-full);
+}
+
+.badge::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--yashi-radius-full);
+  background-color: var(--yashi-color-accent);
+  animation: pulse 2s var(--yashi-transition-base) infinite;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vmin, var(--yashi-text-5xl));
+  line-height: var(--yashi-leading-4xl);
+  font-weight: var(--yashi-font-5xl);
+  letter-spacing: -0.02em;
+  color: var(--yashi-color-bright_foreground);
+}
+
+h1 .caret {
+  color: var(--yashi-color-accent);
+  animation: blink 1.2s steps(2, start) infinite;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 34rem;
+  font-size: var(--yashi-text-lg);
+  color: var(--yashi-color-light_foreground);
+}
+
+.meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--yashi-text-xs);
+  color: var(--yashi-color-dark_foreground);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yashi-space-3);
+  font-family: var(--font-mono);
+  font-size: var(--yashi-text-xs);
+  color: var(--yashi-color-dark_foreground);
+}
+
+.footer a {
+  color: var(--yashi-color-dark_foreground);
+}
+
+.footer a:hover {
+  color: var(--yashi-color-accent);
+}
+
+.footer__sep {
+  color: var(--yashi-color-muted);
+}
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  animation: reveal 600ms var(--yashi-transition-base) forwards;
+  animation-delay: calc(var(--reveal-delay, 0) * 120ms);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

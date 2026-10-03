@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yashi-Oumu &middot; Security, coming soon</title>
+    <meta
+      name="description"
+      content="Yashi-Oumu is a security platform under active build. Launching soon."
+    />
+    <meta name="theme-color" content="#0e1114" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8f9" media="(prefers-color-scheme: light)" />
+    <meta property="og:title" content="Yashi-Oumu" />
+    <meta property="og:description" content="Security, coming soon." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/img/logo_yashi_oumu_background.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="./assets/img/logo_yashi_oumu_dark.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./assets/css/tokens.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <main class="hero">
+      <picture>
+        <source
+          media="(prefers-color-scheme: light)"
+          srcset="./assets/img/logo_yashi_oumu_light.jpeg"
+        />
+        <img
+          class="logo"
+          src="./assets/img/logo_yashi_oumu_dark.jpeg"
+          width="1024"
+          height="1024"
+          alt="Yashi-Oumu"
+          fetchpriority="high"
+          decoding="async"
+          data-reveal
+        />
+      </picture>
+
+      <p class="badge" data-reveal>Pre-release</p>
+
+      <h1 data-reveal>Coming soon<span class="caret" aria-hidden="true">_</span></h1>
+
+      <p class="tagline" data-reveal>
+        Yashi-Oumu is under active build. Follow the repositories for progress, or wait for
+        the launch.
+      </p>
+
+      <p class="meta" data-reveal>ParrotSec aesthetic &middot; Omarchy theming</p>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; <span data-year>2026</span> Yashi-Oumu</span>
+      <span class="footer__sep" aria-hidden="true">//</span>
+      <a href="https://github.com/yashi-oumu" rel="noopener noreferrer">github.com/yashi-oumu</a>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
+  </body>
+</html>
