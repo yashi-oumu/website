@@ -1,5 +1,5 @@
 /* Design tokens - generated from ../designsystem (yashi-oumu themes).
-   Regenerate with: ./scripts/generate-tokens.sh */
+   Regenerate with: ./scripts/generate-site-tokens.sh */
 :root {
   color-scheme: dark;
 }
@@ -17,19 +17,22 @@
   --yashi-color-light_foreground: #a8b0b7;
   --yashi-color-bright_foreground: #ffffff;
   --yashi-color-red: #e02428;
-  --yashi-color-yellow: #d8b23c;
-  --yashi-color-orange: #d97b3c;
-  --yashi-color-green: #4fa85f;
-  --yashi-color-cyan: #4a9aa8;
-  --yashi-color-blue: #5b7fa8;
-  --yashi-color-magenta: #a86aa0;
-  --yashi-color-brown: #6b544a;
-  --yashi-color-bright_red: #ff4a4e;
-  --yashi-color-bright_yellow: #f9e2af;
-  --yashi-color-bright_green: #a6e3a1;
-  --yashi-color-bright_cyan: #94e2d5;
-  --yashi-color-bright_blue: #89b4fa;
-  --yashi-color-bright_magenta: #f5c2e7;
+  --yashi-color-yellow: #b1a06f;
+  --yashi-color-orange: #bc9b83;
+  --yashi-color-green: #6aaf81;
+  --yashi-color-cyan: #77a9b6;
+  --yashi-color-blue: #8ea1c2;
+  --yashi-color-magenta: #c492b3;
+  --yashi-color-brown: #be9986;
+  --yashi-color-bright_red: #dd4b4d;
+  --yashi-color-bright_yellow: #c2b48e;
+  --yashi-color-bright_green: #8bc19d;
+  --yashi-color-bright_cyan: #93bbc5;
+  --yashi-color-bright_blue: #a7b6d0;
+  --yashi-color-bright_magenta: #d1a9c3;
+  --yashi-color-red_text: #f44e50;
+  --yashi-color-bright_orange: #cab09d;
+  --yashi-color-bright_brown: #ccafa1;
   --yashi-space-0: 0;
   --yashi-space-1: 0.25rem;
   --yashi-space-2: 0.5rem;
@@ -88,6 +91,8 @@
   --yashi-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --yashi-shadow-parrotsec: 0 0 0 1px #e50914, 0 4px 12px rgba(229, 9, 20, 0.15);
   --yashi-shadow-brand: 0 0 0 1px #e02428, 0 4px 12px rgba(224, 36, 40, 0.18);
+  --yashi-shadow-focusRing: 0 0 0 2px #f99d9e, 0 0 0 4px #e02428;
+  --yashi-shadow-focusRingLight: 0 0 0 2px #c41e21, 0 0 0 4px #081018;
   --yashi-transition-fast: 150ms ease;
   --yashi-transition-base: 200ms ease;
   --yashi-transition-slow: 300ms ease;
@@ -106,7 +111,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --yashi-color-accent: #c41e22;
+    --yashi-color-accent: #d32225;
     --yashi-color-selection: #fbdcdc;
     --yashi-color-muted: #8d99a3;
     --yashi-color-background: #f7f8f9;
@@ -117,20 +122,23 @@
     --yashi-color-dark_foreground: #9aa4ad;
     --yashi-color-light_foreground: #5c666f;
     --yashi-color-bright_foreground: #000000;
-    --yashi-color-red: #c41e22;
-    --yashi-color-yellow: #a8842a;
-    --yashi-color-orange: #b45f1c;
-    --yashi-color-green: #2f7a3c;
-    --yashi-color-cyan: #2c6f7a;
-    --yashi-color-blue: #3c5f80;
-    --yashi-color-magenta: #8a4a82;
-    --yashi-color-brown: #553f36;
-    --yashi-color-bright_red: #e02428;
-    --yashi-color-bright_yellow: #df8e1d;
-    --yashi-color-bright_green: #40a02b;
-    --yashi-color-bright_cyan: #179299;
-    --yashi-color-bright_blue: #1e66f5;
-    --yashi-color-bright_magenta: #ea76cb;
+    --yashi-color-red: #d32225;
+    --yashi-color-yellow: #9d884d;
+    --yashi-color-orange: #9d6f4d;
+    --yashi-color-green: #4d9d68;
+    --yashi-color-cyan: #4d8d9d;
+    --yashi-color-blue: #4d6b9d;
+    --yashi-color-magenta: #9d4d83;
+    --yashi-color-brown: #9d684d;
+    --yashi-color-bright_red: #db2427;
+    --yashi-color-bright_yellow: #b39c58;
+    --yashi-color-bright_green: #63b47e;
+    --yashi-color-bright_cyan: #63a3b3;
+    --yashi-color-bright_blue: #6382b8;
+    --yashi-color-bright_magenta: #b763a1;
+    --yashi-color-red_text: #b81e21;
+    --yashi-color-bright_orange: #b08158;
+    --yashi-color-bright_brown: #b37e5f;
     --yashi-space-0: 0;
     --yashi-space-1: 0.25rem;
     --yashi-space-2: 0.5rem;
@@ -189,6 +197,8 @@
     --yashi-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
     --yashi-shadow-parrotsec: 0 0 0 1px #e50914, 0 4px 12px rgba(229, 9, 20, 0.15);
     --yashi-shadow-brand: 0 0 0 1px #e02428, 0 4px 12px rgba(224, 36, 40, 0.18);
+    --yashi-shadow-focusRing: 0 0 0 2px #f99d9e, 0 0 0 4px #e02428;
+    --yashi-shadow-focusRingLight: 0 0 0 2px #c41e21, 0 0 0 4px #081018;
     --yashi-transition-fast: 150ms ease;
     --yashi-transition-base: 200ms ease;
     --yashi-transition-slow: 300ms ease;

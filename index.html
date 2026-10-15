@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yashi-Oumu &middot; Security, coming soon</title>
+    <title>oumu beta &middot; Parrot OS security, coming soon</title>
     <meta
       name="description"
-      content="Yashi-Oumu is a security platform under active build. Launching soon."
+      content="oumu is a themed Qt desktop app and scriptable CLI for the Parrot OS security toolset, running the official parrotsec/* images. Beta is coming soon."
     />
     <meta name="theme-color" content="#0e1114" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f7f8f9" media="(prefers-color-scheme: light)" />
-    <meta property="og:title" content="Yashi-Oumu" />
-    <meta property="og:description" content="Security, coming soon." />
+    <meta property="og:title" content="oumu beta" />
+    <meta
+      property="og:description"
+      content="A themed Qt GUI and scriptable CLI for the Parrot OS security toolset. Coming soon."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/img/logo_yashi_oumu_background.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -31,40 +34,225 @@
     </script>
   </head>
   <body>
-    <main class="hero">
-      <picture>
-        <source
-          media="(prefers-color-scheme: light)"
-          srcset="./assets/img/logo_yashi_oumu_light.jpeg"
-        />
-        <img
-          class="logo"
-          src="./assets/img/logo_yashi_oumu_dark.jpeg"
-          width="1024"
-          height="1024"
-          alt="Yashi-Oumu"
-          fetchpriority="high"
-          decoding="async"
-          data-reveal
-        />
-      </picture>
+    <header class="topbar">
+      <div class="shell topbar__inner">
+        <a class="topbar__logo" href="./">oumu<span> beta</span></a>
+        <nav class="topbar__links" aria-label="Primary">
+          <a href="#tools">Tools</a>
+          <a href="#cli">CLI</a>
+          <a href="#requirements">Requirements</a>
+          <a href="https://github.com/yashi-oumu/oumu" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
 
-      <p class="badge" data-reveal>Pre-release</p>
+    <main>
+      <div class="shell">
+        <section class="hero">
+          <picture>
+            <source
+              media="(prefers-color-scheme: light)"
+              srcset="./assets/img/logo_yashi_oumu_light.jpeg"
+            />
+            <img
+              class="logo"
+              src="./assets/img/logo_yashi_oumu_dark.jpeg"
+              width="1024"
+              height="1024"
+              alt="Yashi-Oumu Security"
+              fetchpriority="high"
+              decoding="async"
+              data-reveal
+            />
+          </picture>
 
-      <h1 data-reveal>Coming soon<span class="caret" aria-hidden="true">_</span></h1>
+          <p class="badge" data-reveal>Coming soon</p>
 
-      <p class="tagline" data-reveal>
-        Yashi-Oumu is under active build. Follow the repositories for progress, or wait for
-        the launch.
-      </p>
+          <h1 data-reveal>oumu<span class="version">v0.1.0 beta</span></h1>
 
-      <p class="meta" data-reveal>ParrotSec aesthetic &middot; Omarchy theming</p>
+          <p class="lede" data-reveal>
+            A themed Qt desktop app <em>and</em> a scriptable CLI for the Parrot OS security
+            toolset. Every tool runs inside its official <code>parrotsec/*</code> Docker image, and
+            the interface re-skins itself to match whatever Omarchy theme you have active.
+          </p>
+
+          <div class="cta" data-reveal>
+            <a
+              class="button button--primary"
+              href="https://github.com/yashi-oumu/oumu"
+              rel="noopener noreferrer"
+              >Star on GitHub</a
+            >
+            <a class="button button--outline" href="#tools">See what is inside</a>
+          </div>
+        </section>
+
+        <section id="why">
+          <div class="section__head" data-reveal>
+            <h2>Why containers</h2>
+            <p>The official Parrot images are curated, reproducible, and already carry their dependencies.</p>
+          </div>
+          <ul class="feature-list">
+            <li data-reveal>
+              <strong>The host stays clean.</strong> Nothing is installed on the machine you scan
+              from.
+            </li>
+            <li data-reveal>
+              <strong>A scan is never half-broken.</strong> The image is pinned, so a library
+              upgrade cannot break a tool mid-engagement.
+            </li>
+            <li data-reveal>
+              <strong>No &ldquo;works on my machine&rdquo;.</strong> The tool runs where it was
+              built and tested, every time.
+            </li>
+            <li data-reveal>
+              <strong>It always matches your theme.</strong> The active Omarchy palette is read at
+              launch, so the window belongs on the desktop.
+            </li>
+          </ul>
+        </section>
+
+        <section id="tools">
+          <div class="section__head" data-reveal>
+            <h2>Inside the toolbox</h2>
+            <p>
+              Eleven tools, each behind an official <code>parrotsec/*</code> image, pulled on
+              demand and run with <code>--rm</code>.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/nmap</span>
+              <h3>nmap</h3>
+              <p>Host discovery, port scanning, service fingerprinting.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/sqlmap</span>
+              <h3>sqlmap</h3>
+              <p>Automated SQL injection detection and exploitation.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/netexec</span>
+              <h3>netexec</h3>
+              <p>Password auditing over SMB, LDAP, RDP, SSH, WinRM.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/tshark</span>
+              <h3>tshark</h3>
+              <p>Packet capture and dissection.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/metasploit</span>
+              <h3>Metasploit</h3>
+              <p>Exploit framework, interactive console or single module.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/bettercap</span>
+              <h3>bettercap</h3>
+              <p>MITM, recon, Wi-Fi auditing.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/evil-winrm</span>
+              <h3>Evil-WinRM</h3>
+              <p>Interactive Windows remote shell.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/set</span>
+              <h3>SET</h3>
+              <p>Social engineering and credential harvesting.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/beef</span>
+              <h3>Beef</h3>
+              <p>Browser exploitation framework.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/security</span>
+              <h3>Full toolkit</h3>
+              <p>Every Parrot CLI security tool.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">parrotsec/core</span>
+              <h3>Parrot shell</h3>
+              <p>Clean Parrot base, nothing installed.</p>
+            </article>
+          </div>
+          <p class="section__head" data-reveal>
+            <span class="badge badge--muted">Images pulled on demand</span>
+          </p>
+        </section>
+
+        <section id="cli">
+          <div class="section__head" data-reveal>
+            <h2>One binary, two front-ends</h2>
+            <p>
+              A subcommand runs headless; no arguments opens the window. The CLI needs no display,
+              no Qt and no event loop, and every subcommand takes <code>--json</code>.
+            </p>
+          </div>
+          <div class="columns">
+            <pre class="code" data-reveal><code><span class="prompt">$</span> oumu doctor
+<span class="prompt">$</span> oumu show nmap
+<span class="prompt">$</span> oumu schema &gt; schema.json
+<span class="prompt">$</span> oumu pull nmap
+<span class="prompt">$</span> oumu build nmap --set target=10.0.0.5
+<span class="prompt">$</span> oumu run nmap --set target=10.0.0.0/24 \
+      --set top_ports=100 --json</code></pre>
+            <pre class="code" data-reveal><code><span class="comment"># check the command, run nothing</span>
+<span class="prompt">$</span> oumu run nmap --set target=10.0.0.5 --dry-run
+docker run --rm -i --network host \
+  … parrotsec/nmap:latest nmap 10.0.0.5 -sS -sV
+
+<span class="comment"># values are type-checked before Docker is</span>
+<span class="comment"># involved: a bad int fails immediately</span>
+<span class="prompt">$</span> oumu run sqlmap --set url=http://t/?id=1 \
+      --set batch --set level=3 --json</code></pre>
+          </div>
+        </section>
+
+        <section id="requirements">
+          <div class="section__head" data-reveal>
+            <h2>Requirements</h2>
+            <p>Omarchy (Arch-based) — or any Linux with Qt 6.</p>
+          </div>
+          <div class="grid">
+            <article class="card" data-reveal>
+              <span class="card__tag">docker</span>
+              <h3>Docker</h3>
+              <p>With your user in the <code>docker</code> group.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">qt6</span>
+              <h3>Qt 6</h3>
+              <p>The desktop app needs a working Qt 6 stack.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">pyside6</span>
+              <h3>PySide6</h3>
+              <p>
+                On Arch/Omarchy use the distro package, so the bindings match the system Qt exactly.
+              </p>
+            </article>
+          </div>
+          <p class="section__head" data-reveal>
+            <code class="code">sudo pacman -S pyside6 &amp;&amp; sudo usermod -aG docker $USER</code>
+          </p>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
-      <span>&copy; <span data-year>2026</span> Yashi-Oumu</span>
-      <span class="footer__sep" aria-hidden="true">//</span>
-      <a href="https://github.com/yashi-oumu" rel="noopener noreferrer">github.com/yashi-oumu</a>
+      <div class="shell footer__inner">
+        <span>&copy; <span data-year>2026</span> Yashi-Oumu</span>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="https://github.com/yashi-oumu/oumu" rel="noopener noreferrer">Source</a>
+          <a href="https://github.com/yashi-oumu/oumu/blob/main/README.md" rel="noopener noreferrer"
+            >README</a
+          >
+          <a href="https://www.parrotsec.org/" rel="noopener noreferrer">Parrot OS</a>
+          <a href="https://omarchy.org/" rel="noopener noreferrer">Omarchy</a>
+        </nav>
+      </div>
     </footer>
 
     <script src="./assets/js/main.js" defer></script>

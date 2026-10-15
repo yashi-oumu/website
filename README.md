@@ -1,12 +1,13 @@
-# security.yashi.oumu — coming soon
+# yashi-oumu/website — oumu landing page
 
-Static holding page for the Yashi-Oumu security site. No build step: plain HTML, CSS and
-JavaScript, deployed straight to GitHub Pages.
+Static landing page for oumu, the themed Qt GUI and scriptable CLI for the Parrot OS
+security toolset. No build step: plain HTML, CSS and JavaScript, deployed straight to
+GitHub Pages.
 
 ## Structure
 
 ```
-index.html            landing page (logo + "coming soon")
+index.html            landing page (hero, tool grid, CLI examples, requirements)
 404.html              GitHub Pages fallback
 assets/css/tokens.css generated design tokens (do not edit by hand)
 assets/css/main.css   page styles, built on the tokens
@@ -39,7 +40,7 @@ python3 -m http.server 8000
 
 `.github/workflows/deploy.yml` publishes the repository root to GitHub Pages on every push
 to `main`. Enable it once: **Settings → Pages → Build and deployment → Source → GitHub
-Actions**. Site will be served from `https://yashi-oumu.github.io/website/`.
+Actions**. Site is served from `https://yashi-oumu.github.io/website/`.
 
 All asset references are relative, so the site works from any Pages base path or from a
 domain served out of the repo root.
