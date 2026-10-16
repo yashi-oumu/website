@@ -272,6 +272,21 @@ h1 .version {
   color: #ffffff;
 }
 
+.hero__shot {
+  margin: var(--yashi-space-4) 0 0;
+  width: 100%;
+  max-width: 56rem;
+}
+
+.hero__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--yashi-radius-lg);
+  border: 1px solid var(--yashi-color-lighter_background);
+  box-shadow: var(--yashi-shadow-brand);
+}
+
 /* ---------- sections ---------- */
 
 .section__head {
