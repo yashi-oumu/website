@@ -6,14 +6,14 @@
     <title>oumu beta &middot; Parrot OS security, coming soon</title>
     <meta
       name="description"
-      content="oumu is a themed Qt desktop app and scriptable CLI for the Parrot OS security toolset, running the official parrotsec/* images. Beta is coming soon."
+      content="oumu is a themed Qt desktop app and scriptable CLI for the Parrot OS security toolset, running the official parrotsec/* images and bundled with skills for custom agents. Beta is coming soon."
     />
     <meta name="theme-color" content="#0e1114" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f7f8f9" media="(prefers-color-scheme: light)" />
     <meta property="og:title" content="oumu beta" />
     <meta
       property="og:description"
-      content="A themed Qt GUI and scriptable CLI for the Parrot OS security toolset. Coming soon."
+      content="A themed Qt GUI and scriptable CLI for the Parrot OS security toolset, bundled with skills for custom agents. Coming soon."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/img/logo_yashi_oumu_background.jpeg" />
@@ -40,6 +40,7 @@
         <nav class="topbar__links" aria-label="Primary">
           <a href="#tools">Tools</a>
           <a href="#cli">CLI</a>
+          <a href="#agents">Agents</a>
           <a href="#requirements">Requirements</a>
           <a href="https://github.com/yashi-oumu/oumu" rel="noopener noreferrer">GitHub</a>
         </nav>
@@ -72,8 +73,9 @@
 
           <p class="lede" data-reveal>
             A themed Qt desktop app <em>and</em> a scriptable CLI for the Parrot OS security
-            toolset. Every tool runs inside its official <code>parrotsec/*</code> Docker image, and
-            the interface re-skins itself to match whatever Omarchy theme you have active.
+            toolset, bundled with skills to provide the right usage for custom agents. Every tool
+            runs inside its official <code>parrotsec/*</code> Docker image, and the interface
+            re-skins itself to match whatever Omarchy theme you have active.
           </p>
 
           <div class="cta" data-reveal>
@@ -119,6 +121,10 @@
             <li data-reveal>
               <strong>It always matches your theme.</strong> The active Omarchy palette is read at
               launch, so the window belongs on the desktop.
+            </li>
+            <li data-reveal>
+              <strong>Ready for custom agents.</strong> Bundled skills teach custom agents the
+              right CLI usage, schemas, and safety boundaries out of the box.
             </li>
           </ul>
         </section>
@@ -218,6 +224,43 @@ docker run --rm -i --network host \
 <span class="comment"># involved: a bad int fails immediately</span>
 <span class="prompt">$</span> oumu run sqlmap --set url=http://t/?id=1 \
       --set batch --set level=3 --json</code></pre>
+          </div>
+        </section>
+
+        <section id="agents">
+          <div class="section__head" data-reveal>
+            <h2>Bundled skills for custom agents</h2>
+            <p>
+              The application comes bundled with agent skills installed to
+              <code>~/.agents/skills/oumu/</code>, giving custom agents and coding assistants the
+              right usage, schemas, and safety rails out of the box.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card" data-reveal>
+              <span class="card__tag">skill/SKILL.md</span>
+              <h3>Right usage by default</h3>
+              <p>
+                Teaches custom agents when to pick each tool, how to pass <code>--set</code> fields,
+                how to drive interactive tools unattended, and where the authorisation boundary sits.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">skill/reference/</span>
+              <h3>Zero-drift reference</h3>
+              <p>
+                Per-tool field tables and exit codes are generated directly from the catalog and
+                CLI, so agent instructions never drift from the code.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__tag">pytest</span>
+              <h3>CI-verified recipes</h3>
+              <p>
+                Every command documented in the bundled skill is executed in the test suite with
+                <code>--dry-run</code>, ensuring custom agents are never fed stale examples.
+              </p>
+            </article>
           </div>
         </section>
 

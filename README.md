@@ -1,13 +1,13 @@
 # yashi-oumu/website — oumu landing page
 
 Static landing page for oumu, the themed Qt GUI and scriptable CLI for the Parrot OS
-security toolset. No build step: plain HTML, CSS and JavaScript, deployed straight to
-GitHub Pages.
+security toolset, bundled with skills to provide the right usage for custom agents. No build
+step: plain HTML, CSS and JavaScript, deployed straight to GitHub Pages.
 
 ## Structure
 
 ```
-index.html            landing page (hero, tool grid, CLI examples, requirements)
+index.html            landing page (hero, tool grid, CLI examples, agent skills, requirements)
 404.html              GitHub Pages fallback
 assets/css/tokens.css generated design tokens (do not edit by hand)
 assets/css/main.css   page styles, built on the tokens
